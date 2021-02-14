@@ -2,6 +2,7 @@ import { Avatar } from "@material-ui/core";
 import React, { forwardRef } from "react";
 import "./Chattext.css";
 import { useStateValue } from "./StateProvider";
+import ReactTimeAgo from "react-time-ago";
 
 const ChatText = forwardRef(({ id, name, text, time, photo }, ref) => {
   const [{ user }, dispatch] = useStateValue();
@@ -31,7 +32,12 @@ const ChatText = forwardRef(({ id, name, text, time, photo }, ref) => {
                     : { background: "white" }
                 }
               >
-                {text} <span className="chattext__time"> {time}</span>
+                {text}
+                <div className="chattext__container">
+                  <span className="chattext__time">
+                    <ReactTimeAgo date={time} locale="en-US" />
+                  </span>
+                </div>
               </p>
             </div>
             {/* <div ></div> */}

@@ -6,6 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
+import TimeAgo from "javascript-time-ago";
+
+import en from "javascript-time-ago/locale/en";
+import ru from "javascript-time-ago/locale/ru";
+
+TimeAgo.addDefaultLocale(en);
+TimeAgo.addLocale(ru);
 
 ReactDOM.render(
   <React.StrictMode>

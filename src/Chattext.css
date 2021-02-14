@@ -40,11 +40,13 @@
 .chattext__sender {
   display: flex;
   flex-direction: row-reverse;
+  margin: 10px;
   /* border: 1px solid green; */
 }
 .chattext__receiver {
   display: flex;
   flex-direction: row;
+  margin: 10px;
   /* border: 1px solid green; */
 }
 .chattext__text > p {

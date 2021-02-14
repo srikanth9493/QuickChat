@@ -23,7 +23,7 @@ function Chat() {
       // const[{user},dispatch]=useStateValue();
       username: user.displayName,
       message: input,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      timestamp: new Date(),
       photoURL: user.photoURL,
     });
 
@@ -73,7 +73,8 @@ function Chat() {
                 key={id}
                 name={username}
                 text={message}
-                time={new Date(timestamp?.toDate()).toUTCString()}
+                // new Date(timestamp?.toDate()).toUTCString()
+                time={new Date(timestamp?.toDate()).toLocaleString()}
                 photo={photoURL}
               ></ChatText>
             ))}
@@ -87,7 +88,7 @@ function Chat() {
             value={input}
             onChange={(event) => setinput(event.target.value)}
           ></input>
-          <Button type="submit" onClick={sendMessage}>
+          <Button disabled={!input} type="submit" onClick={sendMessage}>
             Send
           </Button>
         </form>
