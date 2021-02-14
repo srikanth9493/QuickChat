@@ -1,0 +1,24 @@
+.sidebarnames{
+      display: flex;
+      /* border: 1px solid yellow; */
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 20px;
+      /* background-color: #F7F9FC; */
+      margin-left: 20px;
+      margin-bottom: 10px;
+
+}
+.sidebarnames__names{
+    /* padd */
+    padding-left:30px;  
+    
+}
+.sidebarnames:hover{
+    /* padd */
+    background-color:#F7F9FC 
+}
+a{
+    text-decoration: none !important;
+    color:black
+}

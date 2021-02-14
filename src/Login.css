@@ -1,0 +1,96 @@
+.login {
+  background-color: #f7f9fc;
+}
+.login__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 25vw;
+  height: 90vh;
+  background-color: white;
+  box-shadow: 0px 0px 20px -5px rgb(71, 71, 71);
+  margin: 20px;
+  border-radius: 5px;
+  /* background-color: black; */
+}
+
+.login__container {
+  position: absolute;
+  top: 20px;
+}
+
+#login__logo > .MuiAvatar-root {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+/* .MuiAvatar-root {
+ 
+} */
+
+.login__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  /* margin-bottom: 50px; */
+}
+input {
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 0px 0px 10px -5px rgb(71, 71, 71);
+  padding: 10px;
+  outline: none;
+  width: 20vw;
+  padding-left: 40px;
+}
+
+.login__usname {
+  position: relative;
+}
+.login__pass {
+  position: relative;
+}
+
+i {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+
+.MuiButton-root {
+  /* display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; */
+  padding: 30px !important;
+  /* margin-left: 30px !important ; */
+  border-radius: 20px !important;
+  /* color: #10ac9f; */
+}
+.login__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 10px solid yellow; */
+}
+
+#login__gauth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+#login__gauth > .MuiSvgIcon-root {
+  width: 3em !important;
+  height: 3em !important;
+  color: #10ac9f;
+}
+
+.MuiButton-containedPrimary {
+  background-color: #10ac9f !important;
+}
