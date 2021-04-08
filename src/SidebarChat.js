@@ -43,29 +43,33 @@ function SidebarChat() {
   }, []);
 
   console.log("database nrooms", roomName);
+
   const classes = useStyles();
   const [{ user }, dispatch] = useStateValue();
+  console.log("user", user);
 
   return (
     <div className="sidebarchat">
-      <div className="sidebar__logo">
+      {/* <div className="sidebar__logo">
         <Avatar
           alt="Remy Sharp"
           src="https://w7.pngwing.com/pngs/805/719/png-transparent-computer-icons-computer-network-gateway-internet-others-computer-network-logo-online-chat.png"
           className={classes.large}
         />
         <h2>Quick Chat</h2>
-      </div>
+      </div> */}
 
       {/* sidebar header */}
+      {/* <div className="sidebar__container"> */}
       <div className="sidebar__bio">
         <Avatar
           alt="Remy Sharp"
           className={classes.verylarge}
           src={user.photoURL}
+          className="sidebar__bio__logo"
         />
         <div className="sidebar__desc">
-          <h3>Srikanth</h3>
+          <h3>{user.displayName}</h3>
           <p>Lead Full Stack Developer</p>
         </div>
       </div>
@@ -76,6 +80,7 @@ function SidebarChat() {
       {/* sidebar  Names*/}
 
       <div className="sidebar__names">
+        {/* <div className="sidebar__names__container"> */}
         <SidebarNames addNewChat={true}></SidebarNames>
 
         {roomName.map(({ id, name }) => (
@@ -87,7 +92,9 @@ function SidebarChat() {
             ></SidebarNames>
           </Link>
         ))}
+        {/* </div> */}
       </div>
+      {/* </div> */}
     </div>
   );
 }

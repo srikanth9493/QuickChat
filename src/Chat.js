@@ -8,6 +8,9 @@ import firebase from "firebase";
 import { useStateValue } from "./StateProvider";
 import ReactScrollableFeed from "react-scrollable-feed";
 import FlipMove from "react-flip-move";
+import audio from "./fb_chat_2011.mp3";
+const { Howl, Howler } = require("howler");
+// import ReactHowler from "react-howler";
 function Chat() {
   const [input, setinput] = useState("");
   const [message, setmessage] = useState([]);
@@ -26,6 +29,9 @@ function Chat() {
       timestamp: new Date(),
       photoURL: user.photoURL,
     });
+
+    // const sound = new Howl({ src: [audio] });
+    // sound.play();
 
     setinput("");
   };
@@ -46,7 +52,7 @@ function Chat() {
         .doc(roomId)
         .collection("messsages")
         .orderBy("timestamp", "asc")
-        .onSnapshot((snapshot) =>
+        .onSnapshot((snapshot) => {
           setchat(
             snapshot.docs.map(
               (doc) => doc.data()
@@ -57,8 +63,10 @@ function Chat() {
               //   time: doc.data().timestamp,
               // }
             )
-          )
-        );
+          );
+          const sound = new Howl({ src: [audio] });
+          sound.play();
+        });
     }
   }, [roomId]);
 
@@ -74,7 +82,7 @@ function Chat() {
                 name={username}
                 text={message}
                 // new Date(timestamp?.toDate()).toUTCString()
-                time={new Date(timestamp?.toDate()).toLocaleString()}
+                time={new Date(timestamp?.toDate()).toUTCString()}
                 photo={photoURL}
               ></ChatText>
             ))}

@@ -29,7 +29,7 @@ const ChatText = forwardRef(({ id, name, text, time, photo }, ref) => {
                 style={
                   sender
                     ? { background: "black", color: "white" }
-                    : { background: "white" }
+                    : { background: "#4DA39C" }
                 }
               >
                 {text}

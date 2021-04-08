@@ -1,26 +1,28 @@
 .app {
-  
-   background-color: #F7F9FC;
-   width: 100vw;
-   height: 100vh;
-   display: grid;
-   justify-content: center;
-   align-items: center;
-   /* place-items: center; */
-  
-   /* border: 1px solid green; */
-  
+  background-color: #4da39c;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  /* place-items: center; */
+
+  /* border: 1px solid green; */
 }
 
-.app__body{
+.app__body {
   width: 90vw;
   height: 90vh;
-  background-color: #FFFFFF;
+  background-color: #f7f9fc;
   display: flex;
   border-radius: 30px;
   /* border: 1px solid green; */
-  
-
 }
 
-
+@media screen and (max-width: 700px) {
+  .app__body {
+    flex-direction: column;
+    /* border: 1px solid green; */
+  }
+}

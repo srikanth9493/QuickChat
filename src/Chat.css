@@ -4,7 +4,7 @@
   flex: 0.75;
   background-color: #f7f9fc;
   border: 1 px green;
-  margin: 10px;
+  margin: 5px;
   border-radius: 20px;
 }
 .chat__body {
@@ -12,16 +12,40 @@
   flex-direction: column;
   flex: 1;
   /* overflow-y: scroll; */
-  overflow-x: hidden;
+  overflow: scroll;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 2px rgb(196, 193, 193);
+  margin: 5px 5px;
+  padding: 20px;
   /* overflow-y:hid   den   ; */
   /* border:1px solid yellow; */
+}
+
+.chat__body::-webkit-scrollbar {
+  display: none;
+}
+.styles_scrollable-div__1DOyU::-webkit-scrollbar {
+  display: none;
+}
+
+.chat {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat__body::-webkit-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .chat__bottom {
   display: flex;
   /* border:1px solid yellow; */
-  padding: 20px;
+  margin: 5px 5px;
+
   justify-content: space-evenly;
+  /* box-shadow: 0px 0px 5px 2px rgb(196, 193, 193); */
 }
 
 .chat__bottom > form {
@@ -34,9 +58,26 @@
   flex: 1;
   border: none;
   border-radius: 20px;
+  margin: 0px;
+  box-shadow: 0px 0px 5px 2px rgb(196, 193, 193);
   /* border:5px solid rgb(92, 44, 180); */
 }
 
 .MuiButton-root {
   background-color: #10ac9f !important;
+}
+
+@media screen and (max-width: 700px) {
+  .chat__body {
+    /* display: flex;
+    flex-direction: row;
+    flex: 0.75; */
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 5px 5px;
+  }
+
+  .chat {
+    overflow: scroll;
+  }
 }

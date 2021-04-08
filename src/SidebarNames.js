@@ -20,7 +20,7 @@ function SidebarNames({ name, addNewChat }) {
     </div>
   ) : (
     <div onClick={addRoom} className="sidebarnames">
-      <h3>Add New Chat</h3>
+      <h3>Add New Room</h3>
     </div>
   );
 }
