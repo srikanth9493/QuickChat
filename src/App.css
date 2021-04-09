@@ -14,6 +14,7 @@
 .app__body {
   width: 90vw;
   height: 90vh;
+  position: relative;
   background-color: #f7f9fc;
   display: flex;
   border-radius: 30px;

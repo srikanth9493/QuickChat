@@ -1,21 +1,25 @@
 import { Button, useScrollTrigger } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./Chat.css";
 import ChatText from "./ChatText";
 import db from "./firebase";
 import firebase from "firebase";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useStateValue } from "./StateProvider";
 import ReactScrollableFeed from "react-scrollable-feed";
 import FlipMove from "react-flip-move";
 import audio from "./fb_chat_2011.mp3";
+
 const { Howl, Howler } = require("howler");
+
 // import ReactHowler from "react-howler";
 function Chat() {
   const [input, setinput] = useState("");
   const [message, setmessage] = useState([]);
   const [chat, setchat] = useState([]);
   const [{ user }, dispatch] = useStateValue();
+  const history = useHistory();
   console.log("chat user", user);
   // console.log(message)
   const sendMessage = (e) => {
@@ -69,11 +73,28 @@ function Chat() {
         });
     }
   }, [roomId]);
+  const handle_backicon = () => {
+    history.goBack();
+    console.log("hsa", "back button");
+
+    const chat = document.querySelector(".chat");
+    chat.classList.toggle("show");
+
+    const sidebar_chat = document.querySelector(".sidebarchat");
+    console.log(sidebar_chat, "bio is clicked");
+    chat.classList.toggle("hidden");
+
+    // sidebar_chat.setAttribute("display", "block");
+  };
 
   console.log("Params", chat, roomId);
   return (
     <div className="chat">
       <div className="chat__body">
+        <div class="backicon" onClick={handle_backicon}>
+          <ArrowBackIcon className="chat__body__back__icon"></ArrowBackIcon>
+        </div>
+
         <ReactScrollableFeed>
           <FlipMove>
             {chat.map(({ id, username, message, timestamp, photoURL }) => (
